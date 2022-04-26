@@ -234,11 +234,7 @@ function searchByTraits(people){
     let dob = promptFor("What is the person's DOB?", chars);
     let height = promptFor("What is the person's Height?", chars);
     let weight = promptFor("How much does the person Weight?", chars);
-    let eyeColor = promptFor("What is the person's Eye Color?", chars);
-    let occupation = promptFor("What is the person's Occupation?", chars);
-//     let parents = promptFor("Who is the person's Parents?", chars);
-//     let currentSpouse = promptFor("Who is the person's Spouse?", chars);
-       
+    let eyeColor = promptFor("What is the person's Eye Color?", chars);  
 
     let genderTrait = people.filter(function(el){
         
@@ -251,9 +247,9 @@ function searchByTraits(people){
         }
     });
         return genderTrait;
-    
-}
-{
+
+
+
     let dobTrait = people.filter(function(el){
         
         if (el.dob === dob){
@@ -266,8 +262,8 @@ function searchByTraits(people){
     });
         return dobTrait;
     
-}
-{
+
+
 
     let heightTrait = people.filter(function(el){
         
@@ -281,8 +277,8 @@ function searchByTraits(people){
     });
         return heightTrait;
     
-}
-{
+
+
 
     let weightTrait = people.filter(function(el){
         
@@ -296,8 +292,8 @@ function searchByTraits(people){
     });
         return weightTrait;
     
-}
-{
+
+
     let eyeColorTrait = people.filter(function(el){
         
         if (el.eyeColor === eyeColor){
@@ -309,21 +305,12 @@ function searchByTraits(people){
         }
     });
         return eyeColorTrait;
-    
-}
-{
-    let occupationTrait = people.filter(function(el){
-        
-        if (el.occupation === occupation){
-            console.log(el);
-            return true;
-        }
-        else{
-            return false;
-        }
-    });
-        return occupationTrait;
-    
-}
 
+      
+}
+let traits = searchByTraits()
+console.log(traits)
 // End of searchByTraits
+
+//multi input /callback
+// single input/ filter
