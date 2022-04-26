@@ -192,3 +192,20 @@ function chars(input) {
 
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
+
+// last name, parents, currentSpouse
+function findPersonFamily(person, people){
+   
+    let results = people.filter(function(el){
+        if(person === 'lastname' , 'parents' , 'currentSpouse'){
+            console.log(el);
+            return true;
+        }   
+        else{
+            return false;
+        }
+    });
+
+    return results;
+}
+// End of findPersonFamily
