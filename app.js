@@ -209,3 +209,35 @@ function findPersonFamily(person, people){
     return results;
 }
 // End of findPersonFamily
+
+
+// use callback grandkids > parents/kids > grandparents
+function findPersonDescendants(person, people){
+
+    let results = people.filter(function(el){
+        if(person === 'lastname' , 'parents'){
+            console.log(el);
+            return true;
+        }   
+        else{
+            return false;
+        }
+    });
+
+    return results;
+}
+
+//  End of findPersonDescendants
+
+function searchByTraits(people){
+    let gender = promptFor("What is the person's gender?", chars);
+    let dob = promptFor("What is the person's DOB?", chars);
+    let height = promptFor("What is the person's Height?", chars);
+    let weight = promptFor("How much does the person Weight?", chars);
+    let eyeColor = promptFor("What is the person's Eye Color?", chars);
+    let occupation = promptFor("What is the person's Occupation?", chars);
+//     let parents = promptFor("Who is the person's Parents?", chars);
+//     let currentSpouse = promptFor("Who is the person's Spouse?", chars);
+    
+
+}
