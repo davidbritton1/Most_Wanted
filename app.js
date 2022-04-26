@@ -238,6 +238,92 @@ function searchByTraits(people){
     let occupation = promptFor("What is the person's Occupation?", chars);
 //     let parents = promptFor("Who is the person's Parents?", chars);
 //     let currentSpouse = promptFor("Who is the person's Spouse?", chars);
-    
+       
 
+    let genderTrait = people.filter(function(el){
+        
+        if (el.gender === gender){
+            console.log(el);
+            return true;
+        }
+        else{
+            return false;
+        }
+    });
+        return genderTrait;
+    
 }
+{
+    let dobTrait = people.filter(function(el){
+        
+        if (el.dob === dob){
+            console.log(el);
+            return true;
+        }
+        else{
+            return false;
+        }
+    });
+        return dobTrait;
+    
+}
+{
+
+    let heightTrait = people.filter(function(el){
+        
+        if (el.height === height){
+            console.log(el);
+            return true;
+        }
+        else{
+            return false;
+        }
+    });
+        return heightTrait;
+    
+}
+{
+
+    let weightTrait = people.filter(function(el){
+        
+        if (el.weight === weight){
+            console.log(el);
+            return true;
+        }
+        else{
+            return false;
+        }
+    });
+        return weightTrait;
+    
+}
+{
+    let eyeColorTrait = people.filter(function(el){
+        
+        if (el.eyeColor === eyeColor){
+            console.log(el);
+            return true;
+        }
+        else{
+            return false;
+        }
+    });
+        return eyeColorTrait;
+    
+}
+{
+    let occupationTrait = people.filter(function(el){
+        
+        if (el.occupation === occupation){
+            console.log(el);
+            return true;
+        }
+        else{
+            return false;
+        }
+    });
+        return occupationTrait;
+    
+}
+
+// End of searchByTraits
