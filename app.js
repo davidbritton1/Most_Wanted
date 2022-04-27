@@ -231,86 +231,74 @@ function findPersonDescendants(person, people){
 
 function searchByTraits(people){
     let gender = promptFor("What is the person's gender?", chars);
-    let dob = promptFor("What is the person's DOB?", chars);
+    let dateOfBirth = promptFor("What is the person's DOB?", chars);
     let height = promptFor("What is the person's Height?", chars);
     let weight = promptFor("How much does the person Weight?", chars);
     let eyeColor = promptFor("What is the person's Eye Color?", chars);  
 
-    let genderTrait = people.filter(function(el){
-        
-        if (el.gender === gender){
-            console.log(el);
-            return true;
-        }
-        else{
-            return false;
-        }
-    });
-        return genderTrait;
 
 
 
-    let dobTrait = people.filter(function(el){
-        
-        if (el.dob === dob){
-            console.log(el);
-            return true;
-        }
-        else{
-            return false;
-        }
-    });
-        return dobTrait;
-    
 
 
-
-    let heightTrait = people.filter(function(el){
-        
-        if (el.height === height){
-            console.log(el);
-            return true;
-        }
-        else{
-            return false;
-        }
-    });
-        return heightTrait;
-    
-
-
-
-    let weightTrait = people.filter(function(el){
-        
-        if (el.weight === weight){
-            console.log(el);
-            return true;
-        }
-        else{
-            return false;
-        }
-    });
-        return weightTrait;
-    
-
-
-    let eyeColorTrait = people.filter(function(el){
-        
-        if (el.eyeColor === eyeColor){
-            console.log(el);
-            return true;
-        }
-        else{
-            return false;
-        }
-    });
-        return eyeColorTrait;
-
-      
 }
-let traits = searchByTraits()
-console.log(traits)
+
 // End of searchByTraits
 
-//multi input /callback
-// single input/ filter
+function singleDateOfBirth(people) {
+    let dateOfBirth = promptFor("What is the person's DOB?", chars);
+
+    // The foundGender value will be of type Array. Recall that .filter() ALWAYS returns an array.
+    let founddateOfBirth = people.filter(function (person) {
+        if (person.dateOfBirth === dateOfBirth ) {
+            return true;
+        }
+    });
+    return founddateOfBirth;
+}
+// End of singleGender()
+
+
+function singleHeight(people) {
+    let height = promptFor("What is the person's Height?", chars);
+
+    // The foundGender value will be of type Array. Recall that .filter() ALWAYS returns an array.
+    let foundHeight = people.filter(function (person) {
+        if (person.height === height ) {
+            return true;
+        }
+    });
+    return foundHeight;
+}
+// End of singleHeight()
+
+
+function singleWeight(people) {
+    let weight = promptFor("How much does the person Weight?", chars);
+
+    // The foundGender value will be of type Array. Recall that .filter() ALWAYS returns an array.
+    let foundWeight = people.filter(function (person) {
+        if (person.weight === weight ) {
+            return true;
+        }
+    });
+    return foundWeight;
+}
+// End of singleWeight()
+
+
+function singleEyeColor(people) {
+    let eyeColor = promptFor("What is the person's Eye Color?", chars);
+
+    // The foundGender value will be of type Array. Recall that .filter() ALWAYS returns an array.
+    let foundEyeColor = people.filter(function (person) {
+        if (person.eyeColor === eyeColor ) {
+            return true;
+        }
+    });
+    return foundEyeColor;
+}
+// End of singleEyeColor()
+
+
+
