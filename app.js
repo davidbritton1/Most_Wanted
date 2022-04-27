@@ -109,8 +109,12 @@ function searchByName(people) {
     let foundPerson = people.filter(function (person) {
         if (person.firstName === firstName && person.lastName === lastName) {
             return true;
-        }
-    });
+        } 
+        // I ADDED THIS else/return here ******************************************** 
+        else{
+            return false;
+            }
+        });
     return foundPerson;
 }
 // End of searchByName()
@@ -211,7 +215,7 @@ function findPersonFamily(person, people){
 // End of findPersonFamily
 
 
-// use callback grandkids > parents/kids > grandparents
+// use recursion grandkids > parents/kids > grandparents
 function findPersonDescendants(person, people){
 
     let results = people.filter(function(el){
@@ -237,10 +241,16 @@ function searchByTraits(people){
     let eyeColor = promptFor("What is the person's Eye Color?", chars);  
 
 
-
-
-
-
+    // The foundPerson value will be of type Array. Recall that .filter() ALWAYS returns an array.
+    let multipleTraits = people.filter(function (person) {
+        if (person.dateOfBirth === dateOfBirth ) {
+            return true;
+        }
+        else{
+            return false;
+            }
+        });
+    return multipleTraits;
 }
 
 // End of searchByTraits
@@ -253,11 +263,13 @@ function singleDateOfBirth(people) {
         if (person.dateOfBirth === dateOfBirth ) {
             return true;
         }
-    });
+        else{
+            return false;
+            }
+        });
     return founddateOfBirth;
 }
 // End of singleGender()
-
 
 function singleHeight(people) {
     let height = promptFor("What is the person's Height?", chars);
@@ -267,11 +279,13 @@ function singleHeight(people) {
         if (person.height === height ) {
             return true;
         }
-    });
+        else{
+            return false;
+            }
+        });
     return foundHeight;
 }
 // End of singleHeight()
-
 
 function singleWeight(people) {
     let weight = promptFor("How much does the person Weight?", chars);
@@ -281,11 +295,13 @@ function singleWeight(people) {
         if (person.weight === weight ) {
             return true;
         }
-    });
+        else{
+            return false;
+            }
+        });
     return foundWeight;
 }
 // End of singleWeight()
-
 
 function singleEyeColor(people) {
     let eyeColor = promptFor("What is the person's Eye Color?", chars);
@@ -295,7 +311,10 @@ function singleEyeColor(people) {
         if (person.eyeColor === eyeColor ) {
             return true;
         }
-    });
+        else{
+            return false;
+            }
+        });
     return foundEyeColor;
 }
 // End of singleEyeColor()
