@@ -215,42 +215,58 @@ function findPersonFamily(person, people){
 // End of findPersonFamily
 
 
-// use recursion grandkids > parents/kids > grandparents
-function findPersonDescendants(person, people){
+// // use recursion grandkids > parents/kids > grandparents
+// function findPersonDescendants(person, people){
 
-    let results = people.filter(function(el){
-        if(person === 'lastname' , 'parents'){
-            console.log(el);
-            return true;
-        }   
-        else{
-            return false;
-        }
-    });
+//     let results = people.filter(function(el){
+//         if(person === 'lastname' , 'parents'){
+//             console.log(el);
+//             return true;
+//         }   
+//         else{
+//             return false;
+//         }
+//     });
 
-    return results;
-}
-
-//  End of findPersonDescendants
+//     return results;
+// }
+// //  End of findPersonDescendants
 
 function searchByTraits(people){
-    let gender = promptFor("What is the person's gender?", chars);
-    let dateOfBirth = promptFor("What is the person's DOB?", chars);
-    let height = promptFor("What is the person's Height?", chars);
-    let weight = promptFor("How much does the person Weight?", chars);
-    let eyeColor = promptFor("What is the person's Eye Color?", chars);  
+    
+    while(true){
+        switch (displayOption) {
+            case "dob":
+                
+                let dateOfBirth = singleDateOfBirth(person[0]);
+                alert(dateOfBirth);
+                break;
+            case "height":
+                
+                let height = singleHeight(person[0], people);
+                alert(height);
+                break;
+            case "eyeColor":
+            
+                let eyeColor = singleEyeColor(person[0], people);
+                alert(eyeColor);
+                break;
+            case "weight":
+            
+                let weight = singleWeight(person[0], people);
+                alert(weight);
+                break;
+            case "gender":
+            
+                let gender = singleGender(person[0], people);
+                alert(gender);
+                break;
 
+            default:
 
-    // The foundPerson value will be of type Array. Recall that .filter() ALWAYS returns an array.
-    let multipleTraits = people.filter(function (person) {
-        if (person.dateOfBirth === dateOfBirth ) {
-            return true;
+                return mainMenu(person, people);
         }
-        else{
-            return false;
-            }
-        });
-    return multipleTraits;
+    }
 }
 
 // End of searchByTraits
@@ -318,6 +334,22 @@ function singleEyeColor(people) {
     return foundEyeColor;
 }
 // End of singleEyeColor()
+
+function singleGender(people) {
+    let gender = promptFor("What is the person's gender?", chars);
+
+    // The foundGender value will be of type Array. Recall that .filter() ALWAYS returns an array.
+    let foundGender = people.filter(function (person) {
+        if (person.foundGender === gender ) {
+            return true;
+        }
+        else{
+            return false;
+            }
+        });
+    return foundGender;
+}
+// End of singleGender()
 
 
 
