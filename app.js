@@ -59,7 +59,7 @@ function mainMenu(person, people) {
         return app(people);
     }
     let displayOption = prompt(
-        `Found ${person[0].firstName} ${person[0].lastName}. Do you want to know their 'info', 'family', or 'descendants'?\nType the option you want or type 'restart' or 'quit'.`
+        `Found ${person[0].firstName} ${person[0].lastName}. Do you want to know their 'info', 'family', 'traits', or 'descendants'?\nType the option you want or type 'restart' or 'quit'.`
     );
     // Routes our application based on the user's input
     switch (displayOption) {
@@ -215,61 +215,23 @@ function findPersonFamily(person, people){
 // End of findPersonFamily
 
 
-// // use recursion grandkids > parents/kids > grandparents
-// function findPersonDescendants(person, people){
+// use recursion grandkids > parents/kids > grandparents
+function findPersonDescendants(person, people){
 
-//     let results = people.filter(function(el){
-//         if(person === 'lastname' , 'parents'){
-//             console.log(el);
-//             return true;
-//         }   
-//         else{
-//             return false;
-//         }
-//     });
-
-//     return results;
-// }
-// //  End of findPersonDescendants
-
-function searchByTraits(people){
-    
-    while(true){
-        switch (displayOption) {
-            case "dob":
-                
-                let dateOfBirth = singleDateOfBirth(person[0]);
-                alert(dateOfBirth);
-                break;
-            case "height":
-                
-                let height = singleHeight(person[0], people);
-                alert(height);
-                break;
-            case "eyeColor":
-            
-                let eyeColor = singleEyeColor(person[0], people);
-                alert(eyeColor);
-                break;
-            case "weight":
-            
-                let weight = singleWeight(person[0], people);
-                alert(weight);
-                break;
-            case "gender":
-            
-                let gender = singleGender(person[0], people);
-                alert(gender);
-                break;
-
-            default:
-
-                return mainMenu(person, people);
+    let results = people.filter(function(el){
+        if(person === 'lastname' , 'parents'){
+            console.log(el);
+            return true;
+        }   
+        else{
+            return false;
         }
-    }
-}
+    });
 
-// End of searchByTraits
+    return results;
+}
+//  End of findPersonDescendants
+
 
 function singleDateOfBirth(people) {
     let dateOfBirth = promptFor("What is the person's DOB?", chars);
@@ -353,3 +315,47 @@ function singleGender(people) {
 
 
 
+function searchByTraits(person, people){
+   
+
+    while(true){
+
+        let displayOption = prompt(
+            `Found . Do you want to know their 'dob', 'height', 'weight', or 'eyeColor'?\nType the option you want or type 'restart' or 'quit'.`
+        );
+
+        switch (displayOption) {
+            case "dob":
+                
+                let dateOfBirth = singleDateOfBirth(person[0]);
+                alert(dateOfBirth);
+                break;
+            case "height":
+                
+                let height = singleHeight(person[0], people);
+                alert(height);
+                break;
+            case "eyeColor":
+            
+                let eyeColor = singleEyeColor(person[0], people);
+                alert(eyeColor);
+                break;
+            case "weight":
+            
+                let weight = singleWeight(person[0], people);
+                alert(weight);
+                break;
+            case "gender":
+            
+                let gender = singleGender(person[0], people);
+                alert(gender);
+                break;
+
+            default:
+
+                return searchByTraits(person, people);
+        }
+    }
+}
+
+// End of searchByTraits
