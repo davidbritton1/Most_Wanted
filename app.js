@@ -59,7 +59,7 @@ function mainMenu(person, people) {
         return app(people);
     }
     let displayOption = prompt(
-        `Found ${person[0].firstName} ${person[0].lastName}. Do you want to know their 'info', 'family', 'traits', or 'descendants'?\nType the option you want or type 'restart' or 'quit'.`
+        `Found ${person[0].firstName} ${person[0].lastName}. Do you want to know their 'info', 'family', or 'descendants'?\nType the option you want or type 'restart' or 'quit'.`
     );
     // Routes our application based on the user's input
     switch (displayOption) {
@@ -233,19 +233,20 @@ function findPersonDescendants(person, people){
 //  End of findPersonDescendants
 
 
-function singleDateOfBirth(people) {
+function singleDateOfBirth(person) {
     let dateOfBirth = promptFor("What is the person's DOB?", chars);
 
     // The foundGender value will be of type Array. Recall that .filter() ALWAYS returns an array.
-    let founddateOfBirth = people.filter(function (person) {
+    let foundDateOfBirth = person.filter(function (el) {
         if (person.dateOfBirth === dateOfBirth ) {
+            console.log(el);
             return true;
         }
         else{
             return false;
             }
         });
-    return founddateOfBirth;
+    return foundDateOfBirth;
 }
 // End of singleGender()
 
@@ -321,7 +322,7 @@ function searchByTraits(person, people){
     while(true){
 
         let displayOption = prompt(
-            `Found . Do you want to know their 'dob', 'height', 'weight', or 'eyeColor'?\nType the option you want or type 'restart' or 'quit'.`
+            `Search By: 'dob', 'height', 'weight', or 'eyeColor'?\nType the option you want or type 'restart' or 'quit'.`
         );
 
         switch (displayOption) {
